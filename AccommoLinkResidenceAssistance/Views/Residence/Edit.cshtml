@@ -1,0 +1,140 @@
+﻿@model AccommoLinkResidenceAssistance.Models.ViewModels.EditResidenceViewModel
+
+@using AccommoLinkResidenceAssistance.Constants
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Residences</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LandlordDetails" class="control-label"></label>
+                <select asp-for="LandlordDetails" class="form-control" asp-items="ViewBag.LandlordList">
+                    <option disabled selected hidden>Please select an option</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddressLine1" class="control-label"></label>
+                <input asp-for="AddressLine1" class="form-control" />
+                <span asp-validation-for="AddressLine1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AddressLine2" class="control-label"></label>
+                <input asp-for="AddressLine2" class="form-control" />
+                <span asp-validation-for="AddressLine2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Suburb" class="control-label"></label>
+                <input asp-for="Suburb" class="form-control" />
+                <span asp-validation-for="Suburb" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsNSFASAccreditd" /> @Html.DisplayNameFor(model => model.IsNSFASAccreditd)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="RoomTypes" class="control-label"></label>
+                <select asp-for="RoomTypes" class="form-control" asp-items="Html.GetEnumSelectList<RoomTypes>()">
+                    <option disabled selected hidden>Please select an option</option>
+                </select>
+                <span asp-validation-for="RoomTypes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SinglePrice" class="control-label"></label>
+                <input asp-for="SinglePrice" class="form-control" />
+                <span asp-validation-for="SinglePrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SingleTopUp" class="control-label"></label>
+                <input asp-for="SingleTopUp" class="form-control" />
+                <span asp-validation-for="SingleTopUp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SingleEnsuitePrice" class="control-label"></label>
+                <input asp-for="SingleEnsuitePrice" class="form-control" />
+                <span asp-validation-for="SingleEnsuitePrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SingleEnsuiteTopUp" class="control-label"></label>
+                <input asp-for="SingleEnsuiteTopUp" class="form-control" />
+                <span asp-validation-for="SingleEnsuiteTopUp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SharingPrice" class="control-label"></label>
+                <input asp-for="SharingPrice" class="form-control" />
+                <span asp-validation-for="SharingPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SharingEnsuitePrice" class="control-label"></label>
+                <input asp-for="SharingEnsuitePrice" class="form-control" />
+                <span asp-validation-for="SharingEnsuitePrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SharingEnsuiteTopUp" class="control-label"></label>
+                <input asp-for="SharingEnsuiteTopUp" class="form-control" />
+                <span asp-validation-for="SharingEnsuiteTopUp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AvailableRooms" class="control-label"></label>
+                <input asp-for="AvailableRooms" class="form-control" />
+                <span asp-validation-for="AvailableRooms" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="HasWifi" /> @Html.DisplayNameFor(model => model.HasWifi)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="HasStudyCentre" /> @Html.DisplayNameFor(model => model.HasStudyCentre)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Catering" class="control-label"></label>
+                <select asp-for="Catering" class="form-control" asp-items="Html.GetEnumSelectList<Catering>()">
+                    <option disabled selected hidden>Please select an option</option>
+                </select>
+                <span asp-validation-for="Catering" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="TenantOwnElectricity" /> @Html.DisplayNameFor(model => model.TenantOwnElectricity)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="TenantOwnWater" /> @Html.DisplayNameFor(model => model.TenantOwnWater)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <select asp-for="Status" class="form-control" asp-items="Html.GetEnumSelectList<Status>()">
+                    <option disabled selected hidden>Please select an option</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

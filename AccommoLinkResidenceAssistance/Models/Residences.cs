@@ -20,6 +20,13 @@ namespace AccommoLinkResidenceAssistance.Models
         [ForeignKey("LandlordDetails")]
         public int LandlordId { get; set; }
 
+        [Display(Name = "Residence Picture")]
+        public string ResidencePicture { get; set; }
+
+        [NotMapped]
+        [Display(Name = "Upload Image File")]
+        public IFormFile ImageFile { get; set; }
+
         [Required]
         [Display(Name = "Address Line 1")]
         public string AddressLine1 { get; set; }
@@ -46,7 +53,7 @@ namespace AccommoLinkResidenceAssistance.Models
 
         [Required]
         [Display(Name ="Room Types")]
-        List<RoomTypes>? RoomTypes { get; set; }
+        public RoomTypes RoomTypes { get; set; }
 
         //should be hidden until options are made above
         //top up prices hidden unless res is nsfas accredited

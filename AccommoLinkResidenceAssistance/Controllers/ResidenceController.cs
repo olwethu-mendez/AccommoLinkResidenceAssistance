@@ -23,6 +23,7 @@ namespace AccommoLinkResidenceAssistance.Controllers
 
         public IActionResult Create()
         {
+            ViewBag.LandlordList = _context.tblLandlordDetails.ToList();
             return View();
         }
 

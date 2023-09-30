@@ -124,10 +124,14 @@ namespace AccommoLinkResidenceAssistance.Models.SystemUsers
         [PersonalData]
         public string ZipCode { get; set; }
 
+        [ForeignKey("University")]
+        public int UniversityId { get; set; }
+
         [Required]
         public bool Status { get; set; } = false;
 
 
         public virtual ApplicationUser? User { get; set; }
+        public virtual UniversityDetails? University { get; set;}
     }
 }

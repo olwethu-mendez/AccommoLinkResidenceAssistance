@@ -1,0 +1,48 @@
+﻿@model AccommoLinkResidenceAssistance.Models.Residences
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Residences</h4>
+    <hr />
+    
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group form-check mb-4">
+            <label class="form-check-label">
+                Are you sure you want to delete this record?<br />This is an irreversable action!
+                <input class="form-check-input" id="archiveElmnt" />
+            </label>
+        </div>
+		<input type="submit" id="btnSubmit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+	<script>
+		window.onload = function () {
+			var checkbox = document.getElementById('archiveElmnt');
+			var button = document.getElementById('btnSubmit');
+
+			checkbox.addEventListener('change', function () {
+				if (checkbox.checked) {
+					button.disabled = false;
+				} else {
+					button.disabled = true;
+				}
+			});
+
+			// Trigger change event to set initial visibility
+			checkbox.dispatchEvent(new Event('change'));
+		};
+	</script>
+}

@@ -29,8 +29,9 @@ namespace AccommoLinkResidenceAssistance.Controllers
         }
 
         // GET: StudentController/Create
-        public IActionResult Create()
+        public IActionResult Create(string? Id)
         {
+            ViewBag.StudentId = Id;
             return View();
         }
 
@@ -43,7 +44,7 @@ namespace AccommoLinkResidenceAssistance.Controllers
             {
                 _context.tblStudentDetails.Add(model);
                 _context.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
             return View();
         }

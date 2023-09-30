@@ -111,7 +111,10 @@ namespace AccommoLinkResidenceAssistance.Constants
 
 	public enum RoomTypes
 	{
-		Sharing, [Display(Name ="Sharing Ensuite")]SharingEnsuite, Single, [Display(Name ="Single Ensuite")]SingleEnsuite
+		Single,
+		[Display(Name ="Single Ensuite")]SingleEnsuite,
+		Sharing,
+		[Display(Name ="Sharing Ensuite")]SharingEnsuite,
 	}
 
 	public enum Status

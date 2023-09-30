@@ -15,6 +15,7 @@ namespace AccommoLinkResidenceAssistance.Controllers
 
         public IActionResult Create()
         {
+            ViewBag.ResidenceList = _context.tblResidences.ToList();
             return View();
         }
 

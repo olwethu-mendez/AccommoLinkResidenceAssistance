@@ -33,7 +33,7 @@ namespace AccommoLinkResidenceAssistance.Controllers
             {
                 _context.tblLandlordDetails.Add(model);
                 _context.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Home");
             }
             return View();
         }
