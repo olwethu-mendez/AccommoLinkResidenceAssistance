@@ -128,7 +128,7 @@ namespace AccommoLinkResidenceAssistance.Models.SystemUsers
         public int UniversityId { get; set; }
 
         [Required]
-        public bool Status { get; set; } = false;
+        public Status Status { get; set; } = Status.Approved;
 
 
         public virtual ApplicationUser? User { get; set; }

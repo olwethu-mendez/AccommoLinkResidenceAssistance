@@ -7,32 +7,45 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AccommoLinkResidenceAssistance.styles.css" asp-append-version="true" />
+    @*<link rel="stylesheet" href="Index.css">*@
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,900;1,300;1,400;1,500&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-toggleable navbar-light bg-white border-bottom box-shadow mb-5 shadow-lg position-fixed w-100 ps-5 pe-5">
+            <div class="container-fluid d-flex justify-content-between">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AccommoLinkResidenceAssistance</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                    
+                    <ul class="navbar-nav flex-grow-1 justify-content-center px-5 unaligned-text">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <b><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">HOME</a></b>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <b><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">ABOUT</a></b>
+                        </li>
+                        <li class="nav-item">
+                            <b><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">CONTACT US</a></b>
+                        </li>
+                        <li class="nav-item">
+                            <b><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">PRIVACY</a></b>
                         </li>
                     </ul>
+                    </b>
                     <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class="container-fluid">
+        <main role="main" class="p0 m-0 pb-3">
             @RenderBody()
         </main>
     </div>
