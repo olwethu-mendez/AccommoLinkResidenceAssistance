@@ -29,9 +29,8 @@ namespace AccommoLinkResidenceAssistance.Controllers
         }
 
         // GET: StudentController/Create
-        public IActionResult Create(string? Id)
+        public IActionResult Create()
         {
-            ViewBag.StudentId = Id;
             return View();
         }
 

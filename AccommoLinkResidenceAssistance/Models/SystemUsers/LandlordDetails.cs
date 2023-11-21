@@ -125,7 +125,7 @@ namespace AccommoLinkResidenceAssistance.Models.SystemUsers
         public string ZipCode { get; set; }
 
         [Required]
-        public bool Status { get; set; } = false;
+        public Status Status { get; set; } = Status.Pending;
 
 
         public virtual ApplicationUser? User { get; set; }

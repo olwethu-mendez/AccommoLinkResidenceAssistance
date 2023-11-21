@@ -48,8 +48,6 @@ namespace AccommoLinkResidenceAssistance.Models.SystemUsers
         [StringLength(10, ErrorMessage = "Standard phone number can only be 10 digits long.", MinimumLength = 10)] //datatype must be number in view/html
         public string FaxNumber { get; set; }
 
-        public List<UniversityCampuses>? UniversityCampuses { get; set; }
-
         [Required]
         [PersonalData]
         [Display(Name = "Email Address")]

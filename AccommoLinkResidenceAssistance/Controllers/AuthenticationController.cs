@@ -59,7 +59,6 @@ namespace AccommoLinkResidenceAssistance.Controllers
                 var user = new ApplicationUser
                 {
                     UserName = model.UserName,
-                    Name = model.Name,
                     Email = model.Email,
                     PhoneNumber = model.PhoneNumber,
                     Password = model.Password,
@@ -67,7 +66,7 @@ namespace AccommoLinkResidenceAssistance.Controllers
                     CreatedOn = model.CreatedOn,
                     UserRole = model.UserRole,
                     ProfilePicture = model.ProfilePicture,
-                    Status = false
+                    Status = model.Status
                 };
 
                 var result = await _userManager.CreateAsync(user, model.Password);
@@ -79,19 +78,19 @@ namespace AccommoLinkResidenceAssistance.Controllers
                     _logger.LogInformation("User created a new account with password.");
                     if(user.UserRole == UserRole.Student)
                     {
-                        return RedirectToAction("Create", "Student", user.Id);
+                        return RedirectToAction("Create", "Student");
                     }
                     else if(user.UserRole == UserRole.University)
                     {
-                        return RedirectToAction("Create", "University", user.Id);
+                        return RedirectToAction("Create", "University");
                     }
                     else if(user.UserRole == UserRole.Landlord)
                     {
-                        return RedirectToAction("Create", "Landlord", user.Id);
+                        return RedirectToAction("Create", "Landlord");
                     }
                     else
                     {
-                        return NotFound();
+                        return NotFound("User Role not found. Please sspecify a user role or contact system administrator.");
                     }
                 }
                 foreach (var error in result.Errors)

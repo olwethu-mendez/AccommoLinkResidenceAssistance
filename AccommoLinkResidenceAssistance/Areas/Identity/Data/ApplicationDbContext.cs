@@ -20,8 +20,8 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
             throw new ArgumentNullException("modelBuilder");
 
         builder.Entity<UniversityCampuses>().HasKey(x => new { x.UniversityId, x.CampusId });
-        builder.Entity<UniversityCampuses>().
-            HasOne(x => x.University).WithMany(x => x.UniversityCampuses).HasForeignKey(y => y.UniversityId);
+        //builder.Entity<UniversityCampuses>().
+        //    HasOne(x => x.University).WithMany(x => x.UniversityCampuses).HasForeignKey(y => y.UniversityId);
         builder.Entity<UniversityCampuses>().
             HasOne(x => x.Campus).WithMany(x => x.UniversityCampuses).HasForeignKey(y => y.CampusId);
 

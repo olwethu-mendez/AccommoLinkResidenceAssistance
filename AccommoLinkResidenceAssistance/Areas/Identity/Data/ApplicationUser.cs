@@ -13,12 +13,14 @@ namespace AccommoLinkResidenceAssistance.Areas.Identity.Data;
 public class ApplicationUser : IdentityUser
 {
     [Required]
-    [Display(Name="Username")]
-    public override string UserName { get; set; }
-    [Required]
-    [Display(Name = "Full Name/Institution")]
+    [Display(Name="Username/Institution Name")]
     [StringLength(120, ErrorMessage = "The {0} must be at least {2} and at a max {1} characters long.", MinimumLength = 2)]
-    public string Name { get; set; }
+
+    public override string UserName { get; set; }
+    //[Required]
+    //[Display(Name = "Full Name/Institution")]
+    //[StringLength(120, ErrorMessage = "The {0} must be at least {2} and at a max {1} characters long.", MinimumLength = 2)]
+    //public string Name { get; set; }
 
     [PersonalData]
     [Display(Name = "Email Address")]
@@ -54,6 +56,6 @@ public class ApplicationUser : IdentityUser
     [Display(Name = "Upload Image File")]
     public IFormFile? ImageFile { get; set; }
 
-    public bool Status { get; set; }
+    public Status Status { get; set; } = Status.Approved;
 }
 

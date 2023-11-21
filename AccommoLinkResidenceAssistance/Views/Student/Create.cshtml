@@ -1,5 +1,12 @@
 ﻿@model AccommoLinkResidenceAssistance.Models.SystemUsers.StudentDetails
 @using AccommoLinkResidenceAssistance.Constants
+@using Microsoft.AspNetCore.Identity
+@using AccommoLinkResidenceAssistance.Areas.Identity.Data
+
+@inject SignInManager<ApplicationUser> signInManager
+@inject UserManager<ApplicationUser> userManager
+@inject IHttpContextAccessor contextAccessor
+@inject AccommoLinkResidenceAssistance.Areas.Identity.Data.ApplicationDbContext _context
 
 @{
     ViewData["Title"] = "Create";
@@ -13,9 +20,9 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            <div class="form-group"> @*!!!Must be hidden!!!*@
                 <label asp-for="UserId" class="control-label"></label>
-                <input asp-for="UserId" class="form-control" />
+                <input asp-for="UserId" value="@userManager.GetUserAsync(User).Result.Id" class="form-control" />
                 <span asp-validation-for="UserId" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -58,7 +65,7 @@
             <div class="form-group">
                 <label asp-for="Gender" class="control-label"></label>
                 <select asp-for="Gender" class="form-control" asp-items="Html.GetEnumSelectList<Gender>()">
-                    <option disabled selected hidden>Please select an option</option>
+                    <option disabled selected hidden value="">Please select an option</option>
                 </select>
                 <span asp-validation-for="Gender" class="text-danger"></span>
             </div>
