@@ -44,7 +44,7 @@
 
         <div class="input-box form-group">
             <label asp-for="UserRole" class="control-label"></label>
-            <select asp-for="UserRole" class="form-control" asp-items="Html.GetEnumSelectList<UserRole>()">
+            <select asp-for="UserRole" class="form-control" asp-items="Html.GetEnumSelectList<RegisterRole>()">
                 <option disabled selected hidden>Please select an option</option>
             </select>
             <span asp-validation-for="UserRole" class="text-danger"></span>
